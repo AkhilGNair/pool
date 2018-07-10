@@ -7,9 +7,9 @@
 \alias{dbGetQuery,Pool,character-method}
 \alias{dbExecute,Pool,character-method}
 \alias{dbListResults,Pool-method}
-\alias{dbListFields,Pool,ANY-method}
+\alias{dbListFields,Pool,character-method}
 \alias{dbListTables,Pool-method}
-\alias{dbReadTable,Pool,ANY-method}
+\alias{dbReadTable,Pool,character-method}
 \alias{dbWriteTable,Pool,ANY-method}
 \alias{dbExistsTable,Pool,ANY-method}
 \alias{dbRemoveTable,Pool,ANY-method}
@@ -23,7 +23,7 @@
 
 \S4method{dbListResults}{Pool}(conn, ...)
 
-\S4method{dbListFields}{Pool,ANY}(conn, name, ...)
+\S4method{dbListFields}{Pool,character}(conn, name, ...)
 
 \S4method{dbListTables}{Pool}(conn, ...)
 
