@@ -65,7 +65,6 @@ stopIfTemporary <- function(temporary) {
 }
 
 # --- These generics are set in dplyr (not database-specific)
-#' @export
 #' @rdname dplyr-db-methods
 copy_to.Pool <- function(dest, df, name = deparse(substitute(df)),
   overwrite = FALSE, temporary = TRUE, ...) {
@@ -76,7 +75,6 @@ copy_to.Pool <- function(dest, df, name = deparse(substitute(df)),
       temporary = temporary, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 tbl.Pool <- function(src, from, ...) {
   db_con <- poolCheckout(src)
@@ -85,7 +83,6 @@ tbl.Pool <- function(src, from, ...) {
 }
 
 # --- These generics are set in dplyr (database-specific)
-#' @export
 #' @rdname dplyr-db-methods
 db_analyze.Pool <- function(con, table, ...) {
   db_con <- poolCheckout(con)
@@ -93,7 +90,6 @@ db_analyze.Pool <- function(con, table, ...) {
   db_analyze(db_con, table = table, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_begin.Pool <- function(con, ...) {
   db_con <- poolCheckout(con)
@@ -101,7 +97,6 @@ db_begin.Pool <- function(con, ...) {
   db_begin(db_con, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_commit.Pool <- function(con, ...) {
   db_con <- poolCheckout(con)
@@ -109,7 +104,6 @@ db_commit.Pool <- function(con, ...) {
   db_commit(db_con, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_create_index.Pool <- function(con, table, columns, name = NULL,
   unique = FALSE, ...) {
@@ -119,7 +113,6 @@ db_create_index.Pool <- function(con, table, columns, name = NULL,
       name = name, unique = unique, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_create_indexes.Pool <- function(con, table, indexes = NULL,
   unique = FALSE, ...) {
@@ -129,7 +122,6 @@ db_create_indexes.Pool <- function(con, table, indexes = NULL,
       unique = unique, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_create_table.Pool <- function(con, table, types, temporary = FALSE, ...) {
   stopIfTemporary(temporary)
@@ -139,7 +131,6 @@ db_create_table.Pool <- function(con, table, types, temporary = FALSE, ...) {
     temporary = temporary, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_data_type.Pool <- function(con, fields) {
   db_con <- poolCheckout(con)
@@ -147,7 +138,6 @@ db_data_type.Pool <- function(con, fields) {
   db_data_type(db_con, fields = fields)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_desc.Pool <- function(x) {
   db_con <- poolCheckout(x)
@@ -155,7 +145,6 @@ db_desc.Pool <- function(x) {
   db_desc(db_con)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_drop_table.Pool <-  function(con, table, force = FALSE, ...) {
   db_con <- poolCheckout(con)
@@ -163,7 +152,6 @@ db_drop_table.Pool <-  function(con, table, force = FALSE, ...) {
   db_drop_table(db_con, table = table, force = force, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_explain.Pool <- function(con, sql, ...) {
   db_con <- poolCheckout(con)
@@ -171,7 +159,6 @@ db_explain.Pool <- function(con, sql, ...) {
   db_explain(db_con, sql = sql, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_has_table.Pool <- function(con, table) {
   db_con <- poolCheckout(con)
@@ -179,7 +166,6 @@ db_has_table.Pool <- function(con, table) {
   db_has_table(db_con, table = table)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_insert_into.Pool <- function(con, table, values, ...) {
   db_con <- poolCheckout(con)
@@ -187,7 +173,6 @@ db_insert_into.Pool <- function(con, table, values, ...) {
   db_insert_into(db_con, table = table, values = values, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_list_tables.Pool <- function(con) {
   db_con <- poolCheckout(con)
@@ -195,7 +180,6 @@ db_list_tables.Pool <- function(con) {
   db_list_tables(db_con)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_query_fields.Pool <- function(con, sql, ...) {
   db_con <- poolCheckout(con)
@@ -203,7 +187,6 @@ db_query_fields.Pool <- function(con, sql, ...) {
   db_query_fields(db_con, sql = sql, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_query_rows.Pool <- function(con, sql, ...) {
   db_con <- poolCheckout(con)
@@ -211,7 +194,6 @@ db_query_rows.Pool <- function(con, sql, ...) {
   db_query_rows(db_con, sql = sql, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_rollback.Pool <- function(con, ...) {
   db_con <- poolCheckout(con)
@@ -219,7 +201,6 @@ db_rollback.Pool <- function(con, ...) {
   db_rollback(db_con, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_save_query.Pool <- function(con, sql, name, temporary = TRUE, ...) {
   stopIfTemporary(temporary)
@@ -229,7 +210,6 @@ db_save_query.Pool <- function(con, sql, name, temporary = TRUE, ...) {
     temporary = temporary, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_write_table.Pool <- function(con, table, types, values,
   temporary = FALSE, ...) {
@@ -240,7 +220,6 @@ db_write_table.Pool <- function(con, table, types, values,
       values = values, temporary = temporary, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 sql_escape_ident.Pool <- function(con, x) {
   db_con <- poolCheckout(con)
@@ -248,7 +227,6 @@ sql_escape_ident.Pool <- function(con, x) {
   sql_escape_ident(db_con, x = x)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 sql_escape_string.Pool <- function(con, x) {
   db_con <- poolCheckout(con)
@@ -256,7 +234,6 @@ sql_escape_string.Pool <- function(con, x) {
   sql_escape_string(db_con, x = x)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 sql_join.Pool <- function(con, x, y, vars, type = "inner", by = NULL, ...) {
   db_con <- poolCheckout(con)
@@ -265,7 +242,6 @@ sql_join.Pool <- function(con, x, y, vars, type = "inner", by = NULL, ...) {
     by = by, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 sql_select.Pool <- function(con, select, from, where = NULL,
   group_by = NULL, having = NULL, order_by = NULL, limit = NULL,
@@ -277,7 +253,6 @@ sql_select.Pool <- function(con, select, from, where = NULL,
       order_by = order_by, limit = limit, distinct = distinct, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 sql_semi_join.Pool <- function(con, x, y, anti = FALSE, by = NULL, ...) {
   db_con <- poolCheckout(con)
@@ -289,7 +264,6 @@ random_table_name <- function(n = 10) {
   paste0(sample(letters, n, replace = TRUE), collapse = "")
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 sql_subquery.Pool <- function(con, from,
   name = random_table_name(), ...) {
@@ -298,7 +272,6 @@ sql_subquery.Pool <- function(con, from,
     sql_subquery(db_con, from = from, name = name, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 sql_translate_env.Pool <- function(con) {
   db_con <- poolCheckout(con)
@@ -307,7 +280,6 @@ sql_translate_env.Pool <- function(con) {
 }
 
 # --- These generics are set in dbplyr (database-specific)
-#' @export
 #' @rdname dplyr-db-methods
 db_collect.Pool <- function(con, sql, n = -1, warn_incomplete = TRUE, ...) {
   db_con <- poolCheckout(con)
@@ -316,7 +288,6 @@ db_collect.Pool <- function(con, sql, n = -1, warn_incomplete = TRUE, ...) {
     warn_incomplete = warn_incomplete, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_compute.Pool <- function(con, table, sql, temporary = TRUE,
   unique_indexes = list(), indexes = list(), ...) {
@@ -328,7 +299,6 @@ db_compute.Pool <- function(con, table, sql, temporary = TRUE,
       indexes = indexes, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_copy_to.Pool <- function(con, table, values, overwrite = FALSE,
   types = NULL, temporary = TRUE, unique_indexes = NULL,
@@ -342,7 +312,6 @@ db_copy_to.Pool <- function(con, table, values, overwrite = FALSE,
       analyze = analyze, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 db_sql_render.Pool <- function(con, sql, ...) {
   db_con <- poolCheckout(con)
@@ -350,7 +319,6 @@ db_sql_render.Pool <- function(con, sql, ...) {
   db_sql_render(db_con, sql = sql, ...)
 }
 
-#' @export
 #' @rdname dplyr-db-methods
 sql_escape_logical.Pool <- function(con, x) {
   db_con <- poolCheckout(con)
