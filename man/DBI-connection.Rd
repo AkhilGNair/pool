@@ -4,8 +4,8 @@
 \name{DBI-connection}
 \alias{DBI-connection}
 \alias{dbSendQuery,Pool-method}
-\alias{dbGetQuery,Pool,ANY-method}
-\alias{dbExecute,Pool,ANY-method}
+\alias{dbGetQuery,Pool,character-method}
+\alias{dbExecute,Pool,character-method}
 \alias{dbListResults,Pool-method}
 \alias{dbListFields,Pool,ANY-method}
 \alias{dbListTables,Pool-method}
@@ -17,9 +17,9 @@
 \usage{
 \S4method{dbSendQuery}{Pool}(conn, statement, ...)
 
-\S4method{dbGetQuery}{Pool,ANY}(conn, statement, ...)
+\S4method{dbGetQuery}{Pool,character}(conn, statement, ...)
 
-\S4method{dbExecute}{Pool,ANY}(conn, statement, ...)
+\S4method{dbExecute}{Pool,character}(conn, statement, ...)
 
 \S4method{dbListResults}{Pool}(conn, ...)
 
@@ -27,7 +27,7 @@
 
 \S4method{dbListTables}{Pool}(conn, ...)
 
-\S4method{dbReadTable}{Pool,ANY}(conn, name, ...)
+\S4method{dbReadTable}{Pool,character}(conn, name, ...)
 
 \S4method{dbWriteTable}{Pool,ANY}(conn, name, value, ...)
 
