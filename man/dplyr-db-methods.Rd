@@ -36,61 +36,64 @@
 \alias{sql_escape_logical.Pool}
 \title{DBIConnection methods from dplyr and dbplyr}
 \usage{
-copy_to.Pool(dest, df, name = deparse(substitute(df)), overwrite = FALSE,
-  temporary = TRUE, ...)
+\method{copy_to}{Pool}(dest, df, name = deparse(substitute(df)),
+  overwrite = FALSE, temporary = TRUE, ...)
 
-tbl.Pool(src, from, ...)
+\method{tbl}{Pool}(src, from, ...)
 
-db_analyze.Pool(con, table, ...)
+\method{db_analyze}{Pool}(con, table, ...)
 
-db_begin.Pool(con, ...)
+\method{db_begin}{Pool}(con, ...)
 
-db_commit.Pool(con, ...)
+\method{db_commit}{Pool}(con, ...)
 
-db_create_index.Pool(con, table, columns, name = NULL, unique = FALSE, ...)
+\method{db_create_index}{Pool}(con, table, columns, name = NULL,
+  unique = FALSE, ...)
 
-db_create_indexes.Pool(con, table, indexes = NULL, unique = FALSE, ...)
+\method{db_create_indexes}{Pool}(con, table, indexes = NULL, unique = FALSE,
+  ...)
 
-db_create_table.Pool(con, table, types, temporary = FALSE, ...)
+\method{db_create_table}{Pool}(con, table, types, temporary = FALSE, ...)
 
-db_data_type.Pool(con, fields)
+\method{db_data_type}{Pool}(con, fields)
 
-db_desc.Pool(x)
+\method{db_desc}{Pool}(x)
 
-db_drop_table.Pool(con, table, force = FALSE, ...)
+\method{db_drop_table}{Pool}(con, table, force = FALSE, ...)
 
-db_explain.Pool(con, sql, ...)
+\method{db_explain}{Pool}(con, sql, ...)
 
-db_has_table.Pool(con, table)
+\method{db_has_table}{Pool}(con, table)
 
-db_insert_into.Pool(con, table, values, ...)
+\method{db_insert_into}{Pool}(con, table, values, ...)
 
-db_list_tables.Pool(con)
+\method{db_list_tables}{Pool}(con)
 
-db_query_fields.Pool(con, sql, ...)
+\method{db_query_fields}{Pool}(con, sql, ...)
 
-db_query_rows.Pool(con, sql, ...)
+\method{db_query_rows}{Pool}(con, sql, ...)
 
-db_rollback.Pool(con, ...)
+\method{db_rollback}{Pool}(con, ...)
 
-db_save_query.Pool(con, sql, name, temporary = TRUE, ...)
+\method{db_save_query}{Pool}(con, sql, name, temporary = TRUE, ...)
 
-db_write_table.Pool(con, table, types, values, temporary = FALSE, ...)
+\method{db_write_table}{Pool}(con, table, types, values, temporary = FALSE,
+  ...)
 
-sql_escape_ident.Pool(con, x)
+\method{sql_escape_ident}{Pool}(con, x)
 
-sql_escape_string.Pool(con, x)
+\method{sql_escape_string}{Pool}(con, x)
 
-sql_join.Pool(con, x, y, vars, type = "inner", by = NULL, ...)
+\method{sql_join}{Pool}(con, x, y, vars, type = "inner", by = NULL, ...)
 
-sql_select.Pool(con, select, from, where = NULL, group_by = NULL,
+\method{sql_select}{Pool}(con, select, from, where = NULL, group_by = NULL,
   having = NULL, order_by = NULL, limit = NULL, distinct = FALSE, ...)
 
-sql_semi_join.Pool(con, x, y, anti = FALSE, by = NULL, ...)
+\method{sql_semi_join}{Pool}(con, x, y, anti = FALSE, by = NULL, ...)
 
-sql_subquery.Pool(con, from, name = random_table_name(), ...)
+\method{sql_subquery}{Pool}(con, from, name = random_table_name(), ...)
 
-sql_translate_env.Pool(con)
+\method{sql_translate_env}{Pool}(con)
 
 db_collect.Pool(con, sql, n = -1, warn_incomplete = TRUE, ...)
 
