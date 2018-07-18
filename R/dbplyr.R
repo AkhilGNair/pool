@@ -71,6 +71,7 @@ copy_to.Pool <- function(dest, df, name = deparse(substitute(df)),
   stopIfTemporary(temporary)
   db_con <- poolCheckout(dest)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::copy_to(db_con, df = df, name = name, overwrite = overwrite,
                  temporary = temporary, ...)
 }
@@ -79,6 +80,7 @@ copy_to.Pool <- function(dest, df, name = deparse(substitute(df)),
 tbl.Pool <- function(src, from, ...) {
   db_con <- poolCheckout(src)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::tbl(db_con, from = from, ...)
 }
 
@@ -87,6 +89,7 @@ tbl.Pool <- function(src, from, ...) {
 db_analyze.Pool <- function(con, table, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_analyze(db_con, table = table, ...)
 }
 
@@ -94,6 +97,7 @@ db_analyze.Pool <- function(con, table, ...) {
 db_begin.Pool <- function(con, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_begin(db_con, ...)
 }
 
@@ -101,6 +105,7 @@ db_begin.Pool <- function(con, ...) {
 db_commit.Pool <- function(con, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_commit(db_con, ...)
 }
 
@@ -109,6 +114,7 @@ db_create_index.Pool <- function(con, table, columns, name = NULL,
                                  unique = FALSE, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_create_index(db_con, table = table, columns = columns,
                          name = name, unique = unique, ...)
 }
@@ -118,6 +124,7 @@ db_create_indexes.Pool <- function(con, table, indexes = NULL,
                                    unique = FALSE, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_create_indexes(db_con, table = table, indexes = indexes,
                            unique = unique, ...)
 }
@@ -127,6 +134,7 @@ db_create_table.Pool <- function(con, table, types, temporary = FALSE, ...) {
   stopIfTemporary(temporary)
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_create_table(db_con, table = table, types = types,
                          temporary = temporary, ...)
 }
@@ -135,6 +143,7 @@ db_create_table.Pool <- function(con, table, types, temporary = FALSE, ...) {
 db_data_type.Pool <- function(con, fields) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_data_type(db_con, fields = fields)
 }
 
@@ -142,6 +151,7 @@ db_data_type.Pool <- function(con, fields) {
 db_desc.Pool <- function(x) {
   db_con <- poolCheckout(x)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_desc(db_con)
 }
 
@@ -149,6 +159,7 @@ db_desc.Pool <- function(x) {
 db_drop_table.Pool <-  function(con, table, force = FALSE, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_drop_table(db_con, table = table, force = force, ...)
 }
 
@@ -156,6 +167,7 @@ db_drop_table.Pool <-  function(con, table, force = FALSE, ...) {
 db_explain.Pool <- function(con, sql, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_explain(db_con, sql = sql, ...)
 }
 
@@ -163,6 +175,7 @@ db_explain.Pool <- function(con, sql, ...) {
 db_has_table.Pool <- function(con, table) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_has_table(db_con, table = table)
 }
 
@@ -170,6 +183,7 @@ db_has_table.Pool <- function(con, table) {
 db_insert_into.Pool <- function(con, table, values, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_insert_into(db_con, table = table, values = values, ...)
 }
 
@@ -177,6 +191,7 @@ db_insert_into.Pool <- function(con, table, values, ...) {
 db_list_tables.Pool <- function(con) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_list_tables(db_con)
 }
 
@@ -184,6 +199,7 @@ db_list_tables.Pool <- function(con) {
 db_query_fields.Pool <- function(con, sql, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_query_fields(db_con, sql = sql, ...)
 }
 
@@ -191,6 +207,7 @@ db_query_fields.Pool <- function(con, sql, ...) {
 db_query_rows.Pool <- function(con, sql, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_query_rows(db_con, sql = sql, ...)
 }
 
@@ -198,6 +215,7 @@ db_query_rows.Pool <- function(con, sql, ...) {
 db_rollback.Pool <- function(con, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_rollback(db_con, ...)
 }
 
@@ -206,6 +224,7 @@ db_save_query.Pool <- function(con, sql, name, temporary = TRUE, ...) {
   stopIfTemporary(temporary)
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_save_query(db_con, sql = sql, name = name,
                        temporary = temporary, ...)
 }
@@ -216,6 +235,7 @@ db_write_table.Pool <- function(con, table, types, values,
   stopIfTemporary(temporary)
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::db_write_table(db_con, table = table, types = types,
                         values = values, temporary = temporary, ...)
 }
@@ -224,6 +244,7 @@ db_write_table.Pool <- function(con, table, types, values,
 sql_escape_ident.Pool <- function(con, x) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::sql_escape_ident(db_con, x = x)
 }
 
@@ -231,6 +252,7 @@ sql_escape_ident.Pool <- function(con, x) {
 sql_escape_string.Pool <- function(con, x) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::sql_escape_string(db_con, x = x)
 }
 
@@ -238,6 +260,7 @@ sql_escape_string.Pool <- function(con, x) {
 sql_join.Pool <- function(con, x, y, vars, type = "inner", by = NULL, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::sql_join(db_con, x = x, y = y, vars = vars, type = type,
                   by = by, ...)
 }
@@ -248,6 +271,7 @@ sql_select.Pool <- function(con, select, from, where = NULL,
                             distinct = FALSE, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::sql_select(db_con, select = select, from = from,
                     where = where, group_by = group_by, having = having,
                     order_by = order_by, limit = limit, distinct = distinct, ...)
@@ -257,6 +281,7 @@ sql_select.Pool <- function(con, select, from, where = NULL,
 sql_semi_join.Pool <- function(con, x, y, anti = FALSE, by = NULL, ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::sql_semi_join(db_con, x = x, y = y, anti = anti, by = by, ...)
 }
 
@@ -269,6 +294,7 @@ sql_subquery.Pool <- function(con, from,
                               name = random_table_name(), ...) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::sql_subquery(db_con, from = from, name = name, ...)
 }
 
@@ -276,6 +302,7 @@ sql_subquery.Pool <- function(con, from,
 sql_translate_env.Pool <- function(con) {
   db_con <- poolCheckout(con)
   on.exit(poolReturn(db_con))
+  dplyr::check_dbplyr()
   dplyr::sql_translate_env(db_con)
 }
 

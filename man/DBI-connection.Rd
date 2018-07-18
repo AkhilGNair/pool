@@ -3,19 +3,19 @@
 \docType{methods}
 \name{DBI-connection}
 \alias{DBI-connection}
-\alias{dbSendQuery,Pool,ANY-method}
+\alias{dbSendQuery,Pool-method}
 \alias{dbGetQuery,Pool,character-method}
 \alias{dbExecute,Pool,character-method}
 \alias{dbListResults,Pool-method}
 \alias{dbListFields,Pool,character-method}
 \alias{dbListTables,Pool-method}
 \alias{dbReadTable,Pool,character-method}
-\alias{dbWriteTable,Pool,ANY,ANY-method}
+\alias{dbWriteTable,Pool,ANY-method}
 \alias{dbExistsTable,Pool,ANY-method}
 \alias{dbRemoveTable,Pool,ANY-method}
 \title{DBIConnection methods.}
 \usage{
-\S4method{dbSendQuery}{Pool,ANY}(conn, statement, ...)
+\S4method{dbSendQuery}{Pool}(conn, statement, ...)
 
 \S4method{dbGetQuery}{Pool,character}(conn, statement, ...)
 
@@ -29,7 +29,7 @@
 
 \S4method{dbReadTable}{Pool,character}(conn, name, ...)
 
-\S4method{dbWriteTable}{Pool,ANY,ANY}(conn, name, value, ...)
+\S4method{dbWriteTable}{Pool,ANY}(conn, name, value, ...)
 
 \S4method{dbExistsTable}{Pool,ANY}(conn, name, ...)
 
